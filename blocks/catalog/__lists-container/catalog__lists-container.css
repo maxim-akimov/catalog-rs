@@ -3,4 +3,5 @@
   background: #fff;
   column-count: 3;
   display: none;
+  position: relative;
 }

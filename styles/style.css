@@ -14,3 +14,5 @@
 @import url(../blocks/catalog/__list-heading/catalog__list-heading.css);
 @import url(../blocks/catalog/__item/catalog__item.css);
 @import url(../blocks/catalog/__link/catalog__link.css);
+@import url(../blocks/btn/btn.css);
+@import url(../blocks/btn/_style/btn_style_close.css);

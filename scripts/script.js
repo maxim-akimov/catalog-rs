@@ -12,10 +12,10 @@ function openContainer(container) {
     container.classList.add('catalog__lists-container_opened');
 }
 
-function closeContainer() {
-    const openedContainer = catalogContainer.querySelector('.catalog__lists-container_opened');
-    if (openedContainer) {
-        openedContainer.classList.remove('catalog__lists-container_opened');
+function closeContainer(evt) {
+    const container = catalogContainer.querySelector('.catalog__lists-container_opened');
+    if (container) {
+        container.classList.remove('catalog__lists-container_opened');
     }
 }
 
@@ -41,16 +41,20 @@ function scroll(container) {
 }
 
 function showCategoryDetails(evt) {
-    const element = evt.target.closest('.catalog__category');
+    const categoryElement = evt.target.closest('.catalog__category');
+    const closeBtnElement = evt.target.closest('.btn_style_close');
 
-    if (element) {
-        const container = getContainer(element);
+    if (categoryElement) {
+        const container = getContainer(categoryElement);
 
         closeContainer();
         removeActiveClass();
-        addActiveClass(element)
+        addActiveClass(categoryElement)
         openContainer(container);
         scroll(container);
+    } else if (closeBtnElement) {
+        removeActiveClass();
+        closeContainer();
     }
 }
 
